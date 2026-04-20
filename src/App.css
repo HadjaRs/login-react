@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Playfair+Display:ital,wght@0,400;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+#root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: pink;
+}
+
+.caixa{
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px black;
+    position: relative;
+    z-index: 3;
+
+}
+
+
+.fundo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    width: 100%;
+    background-color: pink; 
+    position: relative;
+    z-index: 1;
+    overflow: hidden; 
+}
+.fundo::before {
+    content: "";
+    position: absolute;
+    width: 50rem; 
+    height: 30rem;
+    
+    
+    
+    min-width: 320px;
+    background-color: rgb(250, 130, 130);
+    border-radius: 15px;
+    z-index: 2;
+    transform: skew(3deg,6deg);
+    box-shadow: 5px 5px 15px black;
+}
+
+
+
+.caixa h1{
+    text-align: center;
+    padding: 30px;
+}
+
+fieldset{
+    border: none;
+    padding: 10px;
+}
+
+
+
+
+.fild-one, .fild-two{
+    
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    display: flex;
+    gap: 20px;
+
+}
+
+
+fieldset input{
+    border: none;
+    background-color: rgb(209, 207, 207);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+   
+}
+
+.fild-three{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    flex-direction: column;
+    
+    
+}
+
+.fild-three label {
+    display: flex;         
+    flex-direction: row;   
+    align-items: center;    
+    gap: 10px;             
+    cursor: pointer;
+    width: fit-content;    
+}
+
+
+
+#check{
+cursor: pointer;
+width: 20px;
+}
+
+.bt{
+    position: absolute;
+    padding: 10px 25px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: pink;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+    transition: all 0.5s ease-in-out;
+    animation: anime 2s ease-in-out infinite;
+    font-size: 18px ;
+}
+
+.bt:hover{
+    background-color: rgb(250, 123, 123);
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+@keyframes anime{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 850px){
+    .caixa{
+        width: 90%;
+        margin: 20px;
+        box-shadow: 5px 5px 10px  rgb(131, 63, 63);
+    }
+
+    fieldset label{
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+    fieldset input{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .bt{
+        position: static;
+        transform: none;
+        margin: 0 auto;
+        margin: 20px;
+        font-size: 20px;
+    }
+
+   .fundo::before {
+        transform: none;
+        width: 100%;    
+        height: 100%;  
+        border-radius: 0; 
+        top: 0;
+        left: 0;
+    } 
+
+    fieldset label {
+    display: flex;
+    flex-direction: column; 
+    
+    width: 100%;
+}
+
+}
+
